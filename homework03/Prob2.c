@@ -1,42 +1,57 @@
 /********************************
  * File Name: Prob2.c
- * Student's Name:
- * Student's Notre Dame NetID:
- * Date Started:
+ * Student's Name: Sarah Harrington
+ * Student's Notre Dame NetID: sharrin3
+ * Date Started: 09/11/2024
  *******************************/
 
 #include <stdio.h>
 
 /* Declare Functions */
-int solveSum(int start_int, int end_int);
-void printSum(int start_int, int end_int, int sum);
+/********************************
+ * Function Name: solveSum
+ * Pre-Conditions: int int_start, int int_end
+ * Post-Conditions: int
+ * 
+ * solve sum of all integers from int_start until int_end
+ *******************************/
+int solveSum(int int_start, int int_end);
+
+/********************************
+ * Function Name: printSum
+ * Pre-Conditions: int int_start, int int_end, int sum
+ * Post-Conditions: void
+ * 
+ * print sum of all integers from int_start until int_end
+ *******************************/
+void printSum(int int_start, int int_end, int sum);
 
 /* Main Function */
 int main( void ){
-  int start_int_1=22;
-  int end_int_1=83;
+  int int_start_1=22;
+  int int_end_1=83;
 
-  printSum(start_int_1,end_int_1,solveSum(start_int_1, end_int_1));
+  printSum(int_start_1,int_end_1,solveSum(int_start_1, int_end_1));
 
-  int start_int_2=0;
-  int end_int_2=100;
+  int int_start_2=0;
+  int int_end_2=100;
 
-  printSum(start_int_2,end_int_2,solveSum(start_int_2, end_int_2));
+  printSum(int_start_2,int_end_2,solveSum(int_start_2, int_end_2));
 
   return 0;
 }
 
 /* Define Function */
-int solveSum(int start_int, int end_int){
+int solveSum(int int_start, int int_end){
   int inter;
   int sum=0;
 
-  for(inter=start_int; inter<=end_int; ++inter){
+  for(inter=int_start; inter<=int_end; ++inter){
     sum+=inter;
   }
   return sum;
 }
 
-void printSum(int start_int, int end_int, int sum){
-    fprintf(stdout, "The sum (%d to %d) is %d\n",start_int,end_int,sum);
+void printSum(int int_start, int int_end, int sum){
+    fprintf(stdout, "The sum (%d to %d) is %d\n",int_start,int_end,sum);
 }

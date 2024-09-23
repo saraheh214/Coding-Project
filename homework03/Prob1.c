@@ -8,15 +8,30 @@
 #include <stdio.h>
 
 /* Declare Functions */
+/********************************
+ * Function Name: solveVolume
+ * Pre-Conditions: double radius
+ * Post-Conditions: double
+ * 
+ * solved volume of sphere
+ *******************************/
 double solveVolume(double radius);
+
+/********************************
+ * Function Name: printVolume
+ * Pre-Conditions: double radius, double volume
+ * Post-Conditions: void
+ * 
+ * print volume of a sphere
+ *******************************/
 void printVolume(double radius,double volume);
 
 /* Main Function */
 int main(void){
-  double radius_1=2;
+  double radius_1=2; // radius
   printVolume(radius_1, solveVolume(radius_1));
 
-  double radius_2=1.67;
+  double radius_2=1.67; // radius
   printVolume(radius_2, solveVolume(radius_2));
 
 
@@ -30,5 +45,5 @@ double solveVolume(double radius){
 }
 
 void printVolume(double radius, double volume){
-  fprintf( stdout,"Solution for radius %lf: %lf\n",radius, volume);
+  fprintf( stdout,"Solution for radius %.2lf: %lf\n",radius, volume);
 }
