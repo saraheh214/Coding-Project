@@ -1,8 +1,8 @@
 /********************************
  * File Name: Prob5.c
- * Student's Name:
- * Student's Notre Dame NetID:
- * Date Started:
+ * Student's Name: Sarah Harrington
+ * Student's Notre Dame NetID: sharrin3
+ * Date Started: 09/21/24
  *******************************/
 
 #include <stdio.h>

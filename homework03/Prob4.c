@@ -11,7 +11,7 @@
 /* Function Declaration */
 /********************************
  * Function Name: solveCurrent
- * Pre-Conditions: int voltage, int resistance, double capacitance, double time
+ * Pre-Conditions: double voltage, double resistance, double capacitance, double time
  * Post-Conditions: double
  * 
  * solve for current 
