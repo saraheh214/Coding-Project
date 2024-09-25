@@ -47,9 +47,9 @@ int main( void ){
 
 /* Define Functions */
 double solveRadius( int load, int length, int stress){
-  double  pi = 3.14159;
-  double radius_cubed = (length*load)/(pi*stress);
-  double radius = pow(radius_cubed, 0.33333);
+  double  pi = 3.14159; // PI
+  double radius_cubed = (length*load)/(pi*stress); 
+  double radius = pow(radius_cubed, 0.33333); // take cubed root
   return radius;
 }
 

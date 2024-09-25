@@ -43,11 +43,11 @@ int main( void ){
 
 /* Define Function */
 int solveSum(int int_start, int int_end){
-  int inter;
-  int sum=0;
+  int inter; // initialize inter
+  int sum=0; // set sum to 0
 
   for(inter=int_start; inter<=int_end; ++inter){
-    sum+=inter;
+    sum+=inter; // sum = sum + inter
   }
   return sum;
 }

@@ -13,7 +13,7 @@
  * Pre-Conditions: double radius
  * Post-Conditions: double
  * 
- * solved volume of sphere
+ * solve volume of sphere
  *******************************/
 double solveVolume(double radius);
 
@@ -29,7 +29,7 @@ void printVolume(double radius,double volume);
 /* Main Function */
 int main(void){
   double radius_1=2; // radius
-  printVolume(radius_1, solveVolume(radius_1));
+  printVolume(radius_1, solveVolume(radius_1)); 
 
   double radius_2=1.67; // radius
   printVolume(radius_2, solveVolume(radius_2));
@@ -40,10 +40,10 @@ int main(void){
 
 /* Define Functions */
 double solveVolume(double radius){
- double pi=3.14159;
- return((4*pi*radius*radius*radius)/3);
+ double pi=3.14159; // PI
+ return((4*pi*radius*radius*radius)/3); // calculate volume with (4*pi*4^3)/3
 }
 
 void printVolume(double radius, double volume){
-  fprintf( stdout,"Solution for radius %.2lf: %lf\n",radius, volume);
+  fprintf( stdout,"Solution for radius %.2lf: %lf\n",radius, volume); // print radius to 2 decimals and total volume
 }

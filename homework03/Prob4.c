@@ -46,8 +46,8 @@ int main( void ){
 
 /* Function Definition */
 double solveCurrent(double voltage, double resistance, double capacitance, double time){
-  double e = 2.71828;
-  double current = (voltage/resistance)*pow(e, (-1*time)/(resistance*capacitance));
+  double e = 2.71828; // set e
+  double current = (voltage/resistance)*pow(e, (-1*time)/(resistance*capacitance)); // NOTE: raise e to the power
   return current;
 }
 
