@@ -16,7 +16,7 @@
  * 
  * solve for current 
  *******************************/
- double solveCurrent(int voltage, int resistance, double capacitance, double time);
+ double solveCurrent(double voltage, double resistance, double capacitance, double time);
 
 /********************************
  * Function Name: printCurrent
@@ -29,14 +29,14 @@
 
 /* Main Function */
 int main( void ){
-  int E_1 = 20; // voltage in volts
-  int R_1 = 10; // resistance in ohms
+  double E_1 = 20; // voltage in volts
+  double R_1 = 10; // resistance in ohms
   double C_1 = 0.0044; // capacitance in farads
   double t_1 = 0.023; // time in seconds
   printCurrent(solveCurrent(E_1, R_1, C_1, t_1));
 
-  int E_2 = 35; // voltage in volts
-  int R_2 = 10; // resistance in ohms
+  double E_2 = 35; // voltage in volts
+  double R_2 = 10; // resistance in ohms
   double C_2 = 0.016; // capacitance in farads
   double t_2 = 0.067; // time in seconds
   printCurrent(solveCurrent(E_2, R_2, C_2, t_2));
@@ -45,7 +45,7 @@ int main( void ){
 }
 
 /* Function Definition */
-double solveCurrent(int voltage, int resistance, double capacitance, double time){
+double solveCurrent(double voltage, double resistance, double capacitance, double time){
   double e = 2.71828;
   double current = (voltage/resistance)*pow(e, (-1*time)/(resistance*capacitance));
   return current;

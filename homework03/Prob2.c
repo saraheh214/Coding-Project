@@ -28,15 +28,15 @@ void printSum(int int_start, int int_end, int sum);
 
 /* Main Function */
 int main( void ){
-  int int_start_1=22;
-  int int_end_1=83;
-
-  printSum(int_start_1,int_end_1,solveSum(int_start_1, int_end_1));
-
-  int int_start_2=0;
-  int int_end_2=100;
+  int int_start_2=0; // starting integer
+  int int_end_2=100; // ending integer
 
   printSum(int_start_2,int_end_2,solveSum(int_start_2, int_end_2));
+
+  int int_start_1=22; // starting integer
+  int int_end_1=83; // ending integer
+
+  printSum(int_start_1,int_end_1,solveSum(int_start_1, int_end_1));
 
   return 0;
 }
