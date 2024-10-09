@@ -20,7 +20,6 @@ void fill_array(int int_array[]){
   }
 }
 
-
 void print_array(int int_array[]){ 
   int iter; // initialize incrementing
 
@@ -50,12 +49,9 @@ void insertion_sort(int int_array[]){
   }
 }
 
-
 void scan_value(int* search_val){
   if(fscanf(stdin, "%d", search_val)){} // scan value in
 }
-
-
 
 int binary_search(int int_array[], int value){
     int min = 0; // initialize min
