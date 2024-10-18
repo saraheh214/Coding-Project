@@ -1,5 +1,5 @@
 /********************************
- * File Name: homework05.h
+ * File Name: homework05.c
  * Student's Name: Sarah Harrington
  * Student's Notre Dame NetID: sharrin3
  * Date Started: 10/17/2024
