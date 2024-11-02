@@ -68,13 +68,13 @@ int main( const int argc, const char* argv[] ){ // const bc dont need to check t
         // Step 7 - Scan in each value
         if(fscanf(lib_file, "%s",the_lib[iter].title)){} // in the_lib stuct, position iter, part title, passed by ref by def bc array
         if(fscanf(lib_file, "%s",the_lib[iter].course_dept)){}
-        if(fscanf(lib_file, "%lu",&the_lib[iter].course_num)){} // needs & to pass by ref
-        if(fscanf(lib_file, "%lu",&the_lib[iter].num_books)){}
+        if(fscanf(lib_file, "%u",&the_lib[iter].course_num)){} // needs & to pass by ref
+        if(fscanf(lib_file, "%u",&the_lib[iter].num_books)){} // not using arrows bc all vals need to be passed by reference
         
         // Print the values
         fprintf( stdout, "%s %s %u %u\n", the_lib[iter].title, 
             the_lib[iter].course_dept, the_lib[iter].course_num,
-            the_lib[iter].num_books);
+            the_lib[iter].num_books); // using . instead of -> bc its already been deferenced
 
         // Print the locations of the pointers
         fprintf( stdout, "_IO_read_ptr = %p, ", lib_file->_IO_read_ptr);
@@ -94,16 +94,22 @@ int main( const int argc, const char* argv[] ){ // const bc dont need to check t
     fclose(lib_file); // close file, does not delete file
 
     // Step 8a - Create a read FILE* with the argv[1]
-    
+    FILE* write_file = fopen( argv[2],"w"); // argv[0] = executable, argv[1] = read file, argv[3] = write file
 
     // Step 9 - Print to the output
+    fprintf( write_file, "%lu\n", num_entries); //
 
+    for(iter = 0; iter < num_entries; ++iter){
+        fprintf( write_file, "%s %s %u %u\n", the_lib[iter].title, 
+            the_lib[iter].course_dept, the_lib[iter].course_num, 
+            the_lib[iter].num_books); // already dereferenced 
+    }
 
-    // Step 8b - Close the 
-    
+    // Step 8b - Close the file 
+    fclose(write_file);
 
     // Step 5b - Free the lib_entry array
-    
+    free(the_lib);
 
     return EXIT_SUCCESS;
 }
