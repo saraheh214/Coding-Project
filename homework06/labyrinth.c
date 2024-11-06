@@ -2,11 +2,10 @@
 
 maze* maze_constructor(){
 
-    // Your work goes here
+    typedef struct maze{
+        struct maze_cell* start_cell; // added for security 
+    }maze;
 
-
-    // Delete this line of code
-    return NULL;
 }
 
 maze_cell* mc_constructor(maze_cell* previous, int curr_id, char generate_char){

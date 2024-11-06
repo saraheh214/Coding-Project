@@ -6,7 +6,7 @@ int main(  ){
 	// Dynamically allocate a sllist
 	sllist* the_list = constructor();
 
-	fprintf( stdout, "Base Addresses: %p %p\n", &the_list, the_list );
+	fprintf( stdout, "Base Addresses: %p %p\n", &the_list, the_list ); // &the list is in reg, the list is where its pointing (val it points to will be address of first term)
 
 	// Step 9 - Call in main
 	fprintf( stdout, "Head Node Addresses: %p %p\n", &(the_list->head_node), the_list->head_node );
@@ -34,7 +34,7 @@ int main(  ){
 		else{
 
 			// Dr. Morrison's Golden Rule of Pointers!
-			if( /* DELETE THIS COMMENT */ ){
+			if( the_list->head_node != NULL ){
 				pop( the_list );
 			}
 
@@ -46,11 +46,11 @@ int main(  ){
 
 
 	// Step 11 - Call the destructor
-	
+	destructor(the_list->head_node); // recursive function that frees each node
 
 
 	// Step 5 - Free the sllist
-	
+	free(the_list); // final free
 
 	return EXIT_SUCCESS;
 }

@@ -8,10 +8,11 @@ int main( const int argc, const char* argv[] ){
         return EXIT_FAILURE;
     }
 
-    // Delete this line of code (include so initial compilation works only)
-    (void)argv;
+    // allocate maze pointer for size of maze constructor
+    maze* maze_ptr = (maze*)malloc(sizeof(maze_constructor))
 
-    // Your work goes here
+    // free maze ptre
+    free(maze_ptr);
 
     return EXIT_SUCCESS;
 }

@@ -7,7 +7,6 @@ void generate_maze( maze* the_maze, const char* key_string ){
     (void)key_string;
 
     // Your work goes here
-
 }
 
 void generate_cell(maze_cell* curr_cell, const char* key_string, int* curr_id, int* char_loc){
