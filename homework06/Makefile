@@ -28,13 +28,13 @@ homework06_obj := homework06.o labyrinth.o maze_generator.o
 # Compilation
 homework06: $(homework06_obj)
 	$(CC) $(CFLAGS) -o homework06 $(homework06_obj) -lm
-	valgrind --leak-check=full ./homework06
+	valgrind --leak-check=full ./homework06 "Hello, World!"
 
 # All executables
-executable_names := homework06 maze_generator labyrinth
+homework06 := homework06 maze_generator labyrinth
 
 # Make all
-all: $(executable_names)
+all: $(homework06)
 
 # Make clean
 clean:
