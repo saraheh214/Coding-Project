@@ -31,10 +31,10 @@ homework06: $(homework06_obj)
 	valgrind --leak-check=full ./homework06 "Hello, World!"
 
 # All executables
-homework06 := homework06 maze_generator labyrinth
+executable_names := homework06 maze_generator labyrinth
 
 # Make all
-all: $(homework06)
+all: $(executable_names)
 
 # Make clean
 clean:
