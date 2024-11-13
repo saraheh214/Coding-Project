@@ -8,8 +8,8 @@ int main( const int argc, const char* argv[] ){
     }
 
     // dynamically allocate maze_ptr using maze_constructor function
-    maze* maze_ptr = maze_constructor(); // creates a maze pointer using the maze constructor function
-
+    maze* maze_ptr = maze_constructor(); // creates a pointer using the maze constructor function that points from register to maze
+    // this will protect the maze through encapsulation
     generate_maze(maze_ptr, argv[1]); // passes in the maze pointer and inputed string (arg[v])
 
     print_maze(maze_ptr -> start_cell); // prints maze pointer
