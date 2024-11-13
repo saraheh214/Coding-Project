@@ -23,7 +23,7 @@ void generate_cell(maze_cell* curr_cell, const char* key_string, int* curr_id, i
         return;
     }
 
-    int direction = key_string[*char_loc] % 4; // solves direction by taking module of location/4 so gets val between 0-3 this is mapped to LEFT, RIGHT, MIDDLE, and GO BACK as compiler directive
+    int direction = key_string[*char_loc] % 4; // solves direction by taking module of character AT location/4 so gets val between 0-3 this is mapped to LEFT, RIGHT, MIDDLE, and GO BACK as compiler directive
 
     if( direction == LEFT){
         if( curr_cell -> left == NULL ){
