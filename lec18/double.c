@@ -7,7 +7,7 @@ int main(){
 
     double d_result = d_1 - d_2;
 
-    if( d_result == 0.1 ){
+    if( d_result == 0.1 ){ // will say no match because precise not exact
         fprintf( stdout, "Match\n" );
     }
     else{

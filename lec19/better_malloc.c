@@ -33,6 +33,7 @@ int main()
       exit(-1);
    }
 
+   fprintf(stdout, "start");
    fprintf( stdout, "%p at %p\n", int_dyn_arr, &int_dyn_arr ); // will print 0 to show nothing in int_dyn_arr yet
 
    /* 1c - Call the memory allocation function in main */
@@ -63,7 +64,9 @@ void alloc_memory(long unsigned int num_elements, int** dyn_int_array){
 
    fprintf( stdout, "before - %p at %p\n", *dyn_int_array, &dyn_int_array ); 
    *dyn_int_array = (int *)malloc(num_elements * sizeof(int));
+   // allocate memory to int array 
    fprintf( stdout, "after - %p at %p\n", *dyn_int_array, &dyn_int_array );
+   // * changes - this is stored in heap, but & stays same - this is the register
 }
 
 /* Step 2b - Print the memory function definition */
@@ -72,6 +75,7 @@ void print_memory(long unsigned int num_elements, int* dyn_arr_ptr ){
    long unsigned int iter;
    for(iter = 0; iter <num_elements; ++iter){
       fprintf(stdout, "%d at %p\n", dyn_arr_ptr[iter], &dyn_arr_ptr[iter]);
+      // print array value and address of array value in heap
    }
 }
 

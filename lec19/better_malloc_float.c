@@ -19,7 +19,7 @@ int main()
 
 
    fprintf( stdout, "Enter number of elements in integer values (greater than 0): ") ;
-   fscanf( stdin, "%lu", &num_elements) ;
+   if(fscanf( stdin, "%lu", &num_elements)){} 
 
    /* Check for memory leak */
    if (num_elements == 0){
