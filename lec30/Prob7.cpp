@@ -14,7 +14,9 @@ std::vector<int> func( std::vector<int>& the_vec ){
         // When working on this problem, we will brifely discuss this: "teritary operator"
         // What this means: if the_vec.at(iter) > val, then val = the_vec.at(iter). else val = val
         val = ( the_vec.at(iter) > val ) ? the_vec.at(iter) : val;
-        
+        // short operator that perferms if else statement 
+        // after ? is if its true
+        // after : is if its false
         if( the_map.count( the_vec.at(iter) ) > 0 ){
             the_map.at( the_vec.at(iter) )++;
         }

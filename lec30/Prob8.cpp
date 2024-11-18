@@ -6,15 +6,15 @@
 void func( std::vector<int>& the_vec ){
 
     std::stack<int> the_stack;
-
+    // last in, first out 
     std::queue<int> the_queue;
-
+    // first in, first out
     for( long unsigned int iter = 0; iter < the_vec.size(); ++iter ){
 
-        if(the_vec.at(iter) % 2 == 0 )
+        if(the_vec.at(iter) % 2 == 0 ) // if even then push to stack
             the_stack.push( the_vec.at(iter) );
 
-        else
+        else // if not push to queue
             the_queue.push( the_vec.at(iter) );
 
     }
