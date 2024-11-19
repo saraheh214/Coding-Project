@@ -26,8 +26,8 @@ int main(){
     std::pair<int, int> the_pair;
     std::vector<int> the_vec = {22, 17, 15, 31, 9, -21, 18, 45};
     
-    for( long unsigned int iter = 0; iter < the_vec.size() / 2; ++iter ) // goes from 0, 1, 2, 3, 4        func( the_vec, the_pair, iter );
-    
+    for( long unsigned int iter = 0; iter < the_vec.size() / 2; ++iter ) // goes from 0, 1, 2, 3, 4        
+        func(the_vec, the_pair, iter);
     print_vec( the_vec );
     
     return 0;
