@@ -11,6 +11,7 @@ point::point( const COORDINATE& x_in , const COORDINATE& y_in )
     // member initalization list
 
 
+// necessary if method doesnt internally change must be defined as const
 COORDINATE point::get_x() const{
     return this->x_coor; // dynamic so use ->
 }

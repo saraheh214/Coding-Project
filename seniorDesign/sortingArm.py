@@ -14,25 +14,25 @@ ser = serial.Serial('/dev/serial0', baudrate = 9600, timeout = 1)
 flywheel = 13
 pulley = 12
 launcher_extend = 17
-launcher_retrack = 27
+launcher_retract = 27
 weightlift_extend = 9
-weightlift_retrack = 10
+weightlift_retract = 10
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(flywheel, GPIO.OUT)
 GPIO.setup(pulley, GPIO.OUT)
 GPIO.setup(launcher_extend, GPIO.OUT)
-GPIO.setup(launcher_retrack, GPIO.OUT)
+GPIO.setup(launcher_retract, GPIO.OUT)
 GPIO.setup(weightlift_extend, GPIO.OUT)
-GPIO.setup(weightlift_retrack, GPIO.OUT)
+GPIO.setup(weightlift_retract, GPIO.OUT)
 
 flywheel_p = GPIO.PWM(flywheel, 2000)
 pulley_p = GPIO.PWM(pulley, 2000)
 launcher_extend_p = GPIO.PWM(launcher_extend, 2000)
-launcher_retrack_p = GPIO.PWM(launcher_retrack, 2000)
+launcher_retract_p = GPIO.PWM(launcher_retract, 2000)
 weightlift_extend_p = GPIO.PWM(weightlift_extend, 2000)
-weightlift_retrack_p = GPIO.PWM(weightlift_retrack, 2000)
+weightlift_retract_p = GPIO.PWM(weightlift_retract, 2000)
 
 ### functions ###
 def set_motor_speed(motor_pin, speed):
@@ -67,10 +67,14 @@ if pygame.joystick.get_count() > 0:
     try:
         speed = 0
         running = True
+
+        # set all actions as False
         intake_on = False
         launcher_extended = False
-        wieghtlift_extended = False
+        weightlift_extended = False
         running_main_code = False
+        sorting_on = False
+
         print("running")
         while running:
             for event in pygame.event.get(0):
@@ -123,30 +127,71 @@ if pygame.joystick.get_count() > 0:
                         time.sleep(0.5)
 
                 ## set launch/ weightlift motor
-                x_hat, y_hat = joystick.get_hat()
-                if y_hat == 1:
+                hat_val = joystick.get_hat(0)
+                if hat_val == (0, 1):
                     if not launcher_extended:
                         launcher_extended = True
                         set_motor_speed(launcher_extend_p, 255)
                         print("launcher extended")
                         time.sleep(0.5)
-                    elif intake_on:
+                    elif launcher_extended:
                         launcher_extended = False
                         set_motor_speed(launcher_retract_p, 255)
                         print("launcher retracted")
                         time.sleep(0.5)
                 
-                if y_hat == -1:
+                if hat_val == (0, -1):
                     if not weightlift_extended:
                         weightlift_extended = True
                         set_motor_speed(weightlift_extend_p, 255)
                         print("weightlift extended")
                         time.sleep(0.5)
-                    elif intake_on:
+                    elif weightlift_extended:
                         weightlift_extended = False
-                        set_motor_speed(weightlift_retrack_p, 255)
+                        set_motor_speed(weightlift_retract_p, 255)
                         print("weightlift retracted")
                         time.sleep(0.5)
+                
+                ## select color to launch
+                if joystick.get_button(1):
+                    launch_color = "blue"
+
+                if joystick.get_button(3):
+                    launch_color = "yellow"
+
+                if joystick.get_button(1):
+                    launch_color = "red"
+                
+                ## start sorting system
+                if joystick.get_button(9):
+                    if not sorting_on:
+                        sorting_on = True
+                    elif sorting_on:
+                        sorting_on = False
+
+                while sorting_on:
+                    p1.ChangeDutyCycle(2.5)
+                    time.sleep(3)
+                    # loc 2
+                    p1.ChangeDutyCycle(7.5)
+                    #sort()
+                    #if (color_determined == launch_color && launch_sorted == False):
+                     #   p2.ChangeDutyCycle(2.5)
+                      #  launch_sorted = True
+                       # time.sleep(0.5)
+                    #elif (color_determined == "blue"):
+                     #   p2.ChangeDutyCycle(6)
+                      #  time.sleep(0.5)
+                    #elif (color_determined == "yellow"):
+                     #   p2.ChangeDutyCycle(9)
+                      #  time.sleep(0.5)
+                    #elif (color_determined == "red"):
+                     #   p2.ChangeDutyCycle(12)
+                      #  time.sleep(0.5)
+                    time.sleep(3)
+                    # loc 3 
+                    p1.ChangeDutyCycle(12.5)
+                    time.sleep(3)
 
                 if joystick.get_button(10):
                     print("Button 10 is pressed")
