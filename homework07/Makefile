@@ -1,7 +1,7 @@
-# Author: Matthew Morrison
-# E-mail: matt.morrison@nd.edu
+# Author: Sarah Harrington
+# E-mail: sharrin3@nd.edu
 #
-# This is the Makefile for Lecture 31
+# This is the Makefile for homework 7
 
 # G++ is for the GCC compiler for C++
 PP := g++
@@ -15,8 +15,6 @@ CXXFLAGS := -std=c++2a $(FLAGS)
 JKFF.o: JKFF.cpp
 	$(PP) $(CXXFLAGS) -c JKFF.cpp
 
-# aggregate Example
-# Command: make aggregate 
 homework07.o: homework07.cpp
 	$(PP) $(CXXFLAGS) -c homework07.cpp
 

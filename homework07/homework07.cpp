@@ -1,3 +1,10 @@
+/********************************
+ * File Name: homework07.c
+ * Student's Name: Sarah Harrington
+ * Student's Notre Dame NetID: sharrin3
+ * Date Started: 12/4/2024
+ *******************************/
+
 #include "JKFF.h"
 
 #include <iostream>
