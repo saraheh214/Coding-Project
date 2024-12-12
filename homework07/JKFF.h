@@ -1,3 +1,10 @@
+/********************************
+ * File Name: JKFF.h
+ * Student's Name: Sarah Harrington
+ * Student's Notre Dame NetID: sharrin3
+ * Date Started: 12/4/2024
+ *******************************/
+
 #ifndef JKFF_H
 #define JKFF_H
 

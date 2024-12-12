@@ -1,5 +1,5 @@
 /********************************
- * File Name: homework07.c
+ * File Name: homework07.cpp
  * Student's Name: Sarah Harrington
  * Student's Notre Dame NetID: sharrin3
  * Date Started: 12/4/2024
@@ -11,7 +11,7 @@
 #include <fstream>
 #include <string>
 
-#define COUT std::cout 
+#define COUT std::cout
 #define ENDL std::endl
 
 typedef struct JKFF_struct{
